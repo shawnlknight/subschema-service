@@ -1,4 +1,4 @@
-import { makeExecutableSchema } from "@graphql-tools/schema";
+import { makeExecutableSchema } from '@graphql-tools/schema'
 
 const typeDefs = /* GraphQL */ `
   type Company {
@@ -22,23 +22,23 @@ const typeDefs = /* GraphQL */ `
     products: [Product]
     company(id: Int!): Company
   }
-`;
+`
 
-// example data
+// Example data
 const companies = [
-  { id: 1, name: "Nike" },
-  { id: 2, name: "Vans" },
-  { id: 3, name: "Etnies" },
-];
+  { id: 1, name: 'Nike' },
+  { id: 2, name: 'Vans' },
+  { id: 3, name: 'Etnies' },
+]
 
 const products = [
-  { id: 1, companyId: 1, name: "Nyjahs" },
-  { id: 2, companyId: 1, name: "Janoski" },
-  { id: 3, companyId: 2, name: "Old School Pro" },
-  { id: 4, companyId: 2, name: "Sk8 Hi" },
-  { id: 5, companyId: 3, name: "Joslin" },
-  { id: 6, companyId: 3, name: "Marana" },
-];
+  { id: 1, companyId: 1, name: 'Nyjahs' },
+  { id: 2, companyId: 1, name: 'Janoski' },
+  { id: 3, companyId: 2, name: 'Old School Pro' },
+  { id: 4, companyId: 2, name: 'Sk8 Hi' },
+  { id: 5, companyId: 3, name: 'Joslin' },
+  { id: 6, companyId: 3, name: 'Marana' },
+]
 
 const resolvers = {
   Query: {
@@ -53,9 +53,9 @@ const resolvers = {
     company: (product) =>
       companies.find((company) => company.id === product.companyId),
   },
-};
+}
 
 export default makeExecutableSchema({
   typeDefs,
   resolvers,
-});
+})
