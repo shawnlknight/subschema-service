@@ -13,6 +13,8 @@ npm run dev
 
 You should see the following output: `subschema service running at http://localhost:4001/graphql`
 
+**Note**: You may need to run `npm run generate` to generate the `typings/generated.ts` file. The decision was made to not keep the generated types in source control to prevent future issues with merge conflicts.
+
 Example query:
 
 ```gql

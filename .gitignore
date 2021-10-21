@@ -10,3 +10,6 @@ dist/
 # misc
 .DS_Store
 .env
+
+# generated
+*/**/generated.ts
