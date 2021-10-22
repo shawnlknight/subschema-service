@@ -1,8 +1,4 @@
 const inventoryTypes = /* GraphQL */ `
-  schema {
-    query: Query
-  }
-
   # the schema allows the following query:
   type Query {
     products: [Product]
