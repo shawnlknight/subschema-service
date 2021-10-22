@@ -1,10 +1,12 @@
 import { Resolvers } from '../../typings/generated'
 import {
-  getCompanies,
-  getProductById,
+  getProductsForCompany,
+  getCompanyForProduct,
   getProducts,
+  getCompanies,
   getCompanyById,
-} from '../../services/inventory'
+  getProductById,
+} from '../../useCases'
 
 const inventoryResolvers: Resolvers = {
   Query: {
@@ -14,16 +16,10 @@ const inventoryResolvers: Resolvers = {
     company: (_, { id }) => getCompanyById(id),
   },
   Company: {
-    products: (company) => {
-      const products = getProducts()
-      return products.filter((product) => product.companyId === company.id)
-    },
+    products: (company) => getProductsForCompany(company.id),
   },
   Product: {
-    company: (product) => {
-      const companies = getCompanies()
-      return companies.find((company) => company.id === product.companyId)
-    },
+    company: (product) => getCompanyForProduct(product.companyId),
   },
 }
 
