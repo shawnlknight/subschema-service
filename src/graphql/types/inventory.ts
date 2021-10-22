@@ -24,8 +24,15 @@ const inventoryTypes = /* GraphQL */ `
     id: Int!
     companyId: Int!
     name: String
+    type: ProductType
     description: String
     company: Company
+  }
+
+  enum ProductType {
+    footwear
+    clothing
+    accessories
   }
 `
 
