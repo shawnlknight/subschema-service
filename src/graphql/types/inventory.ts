@@ -22,6 +22,7 @@ const inventoryTypes = /* GraphQL */ `
     name: String
     type: ProductType
     description: String
+    unitPrice: String
     company: Company
   }
 
