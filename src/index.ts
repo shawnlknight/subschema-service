@@ -1,13 +1,18 @@
 import * as express from 'express'
 import { graphqlHTTP } from 'express-graphql'
-import inventorySchema from './graphql/schema'
+import { schema } from './graphql/schema'
+import { mockSchema } from './lib/mocking'
+
+// Temporary: Change value to have @graphql-tools/mock
+// return mocked values.
+const useMockSchema = false
 
 const app = async () => {
   const server = express()
   server.use(
     '/graphql',
     graphqlHTTP((request) => ({
-      schema: inventorySchema,
+      schema: useMockSchema ? mockSchema : schema,
       context: { authHeader: request.headers.authorization },
       graphiql: true,
     })),
