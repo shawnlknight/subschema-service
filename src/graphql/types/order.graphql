@@ -1,9 +1,9 @@
 type Query {
-  order(id: Int!): Order
+  order(id: ID!): Order
 }
 
 type Order {
-  id: Int!
+  id: ID!
   status: OrderStatus
 }
 

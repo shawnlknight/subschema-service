@@ -6,7 +6,7 @@ export const getRandomItemFromList = <TReturn = unknown>(
   list: TReturn[],
 ): TReturn => list[Math.floor(Math.random() * list.length)]
 
-const COMPANY_IDS = [1, 2, 3, 4, 5, 6]
+const COMPANY_IDS = ['1', '2', '3', '4', '5', '6']
 
 /**
  * generates a product

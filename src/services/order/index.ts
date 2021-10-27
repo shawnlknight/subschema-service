@@ -1,5 +1,5 @@
 import { Order } from '../../typings/generated'
-import { orders } from '../../mockData/order'
+import { orders } from '../../lib/mocking/mockData/order'
 
 /**
  *

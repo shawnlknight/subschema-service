@@ -1,12 +1,12 @@
 type Query {
   products: [Product]
-  product(id: Int!): Product
-  company(id: Int!): Company
+  product(id: ID!): Product
+  company(id: ID!): Company
   companies: [Company]
 }
 
 type Company {
-  id: Int!
+  id: ID!
   name: String
   """
   the list of products by a company
@@ -15,8 +15,8 @@ type Company {
 }
 
 type Product {
-  id: Int!
-  companyId: Int!
+  id: ID!
+  companyId: ID!
   name: String
   type: ProductType
   description: String

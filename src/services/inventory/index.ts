@@ -1,5 +1,5 @@
 import { Company, Product } from '../../typings/generated'
-import { companies, products } from '../../mockData/inventory'
+import { companies, products } from '../../lib/mocking/mockData/inventory'
 
 /**
  *
